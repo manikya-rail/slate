@@ -21,7 +21,7 @@ code_clipboard: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the Elastic personas API! You can use our API to access Elastic personas API endpoints,
 
 We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
@@ -29,110 +29,102 @@ This example API documentation page was created with [Slate](https://github.com/
 
 # Authentication
 
-> To authorize, use this code:
+> Authentication is handled by  `JWT token`.
 
-```ruby
-require 'kittn'
+Elastic personas uses JWT token keys to allow access to the API.
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
+Elastic personas expects for the JWT token to be included in all API requests to the server in a header that looks like the following:
 
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
+`Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjVlOWRlOGVmNWJiNGVlM2U4MGE1ODI4M2ZiMTgyYmMyM2YyZWExZDc0M2Q2N2E5OTQ2NjNkMzMzMjZlNjQzMzdiY2ZhYzZjNmM0MWI2ODRhIn0.eyJhdWQiOiIxIiwianRpIjoiNWU5Z`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must login to get <code>Bearer token</code> to access for API.
 </aside>
 
-# Kittens
+# Accounts
 
-## Get All Kittens
+## Login
 
 ```ruby
-require 'kittn'
+require "uri"
+require "net/http"
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
+url = URI("localhost:3000/en/api/v1/accounts/login")
+
+http = Net::HTTP.new(url.host, url.port);
+request = Net::HTTP::Post.new(url)
+request["Content-Type"] = "application/json"
+request.body = "{\"account\": {\"email\": \"ajith@techversantinfo.com\", \"password\": \"ajithking\"}}"
+
+response = http.request(request)
+puts response.read_body
 ```
 
 ```python
-import kittn
+import http.client
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
+conn = http.client.HTTPSConnection("localhost", undefined)
+payload = "{\"account\": {\"email\": \"ajith@techversantinfo.com\", \"password\": \"ajithking\"}}"
+headers = {
+  'Content-Type': 'application/json',
+}
+conn.request("POST", "/en/api/v1/accounts/login", payload, headers)
+res = conn.getresponse()
+data = res.read()
+print(data.decode("utf-8"))
 ```
 
 ```shell
-curl "http://example.com/api/kittens" \
-  -H "Authorization: meowmeowmeow"
+curl --location --request POST 'localhost:3000/en/api/v1/accounts/login' \
+--header 'Content-Type: application/json' \
+--data-raw '{"account": {"email": "ajith@techversantinfo.com", "password": "ajithking"}}'
 ```
 
 ```javascript
-const kittn = require('kittn');
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
 
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
+var raw = JSON.stringify({"account":{"email":"ajith@techversantinfo.com","password":"ajithking"}});
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("localhost:3000/en/api/v1/accounts/login", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
+{
+    "status": {
+        "success": "Login sucessfully."
+    }
+}
 ```
 
-This endpoint retrieves all kittens.
+This endpoint login the client and generate jwt token for Api access.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`POST http://localhost:3000/en/api/v1/accounts/login`
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+email | - | client email.
+password | - | client password
+
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+Remember — You can get the JWT token from the response header!
 </aside>
 
 ## Get a Specific Kitten
