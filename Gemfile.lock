@@ -95,6 +95,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
+    rack-contrib (2.3.0)
+      rack (~> 2.0)
     rake (13.0.3)
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
@@ -132,6 +134,7 @@ DEPENDENCIES
   middleman-syntax (~> 3.2)
   nokogiri (~> 1.11.0)
   puma
+  rack-contrib
   rake
   redcarpet (~> 3.5.0)
   rouge (~> 3.21)
