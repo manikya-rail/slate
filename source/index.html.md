@@ -127,61 +127,90 @@ password | - | client password
 Remember — You can get the JWT token from the response header!
 </aside>
 
-## Get a Specific Kitten
+## Update account
 
 ```ruby
-require 'kittn'
+require "uri"
+require "net/http"
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
+url = URI("localhost:3000/en/api/v1/accounts")
+
+http = Net::HTTP.new(url.host, url.port);
+request = Net::HTTP::Put.new(url)
+request["Content-Type"] = "application/json"
+request.body = "{\"account\": {\"your_name\": \"Ajithk\", \"email\": \"ajithbuddy.kumar@gmail.com\", \"current_password\": \"ajithking\"}}"
+
+response = http.request(request)
+puts response.read_body
+
 ```
 
 ```python
-import kittn
+import http.client
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
+conn = http.client.HTTPSConnection("localhost", undefined)
+payload = "{\"account\": {\"your_name\": \"Ajithk\", \"email\": \"ajithbuddy.kumar@gmail.com\", \"current_password\": \"ajithking\"}}"
+headers = {
+  'Content-Type': 'application/json',
+}
+conn.request("PUT", "/en/api/v1/accounts", payload, headers)
+res = conn.getresponse()
+data = res.read()
+print(data.decode("utf-8"))
 ```
 
 ```shell
-curl "http://example.com/api/kittens/2" \
-  -H "Authorization: meowmeowmeow"
+curl --location --request PUT 'localhost:3000/en/api/v1/accounts' \
+--header 'Content-Type: application/json' \
+--data-raw '{"account": {"your_name": "Ajithk", "email": "ajithbuddy.kumar@gmail.com", "current_password": "ajithking"}}'
 ```
 
 ```javascript
-const kittn = require('kittn');
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
 
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
+var raw = JSON.stringify({"account":{"your_name":"Ajithk","email":"ajithbuddy.kumar@gmail.com","current_password":"ajithking"}});
+
+var requestOptions = {
+  method: 'PUT',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("localhost:3000/en/api/v1/accounts", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+    "status": {
+        "success": "Updated sucessfully."
+    }
 }
 ```
 
-This endpoint retrieves a specific kitten.
+This endpoint Updates a account.
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<!-- <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside> -->
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`PUT http://localhost:3000/en/api/v1/accounts`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to retrieve
+your_name | User name
+email     | User email
+current_password | Password for authentication
 
-## Delete a Specific Kitten
+<!-- ## Delete a Specific Kitten
 
 ```ruby
 require 'kittn'
@@ -231,3 +260,4 @@ Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to delete
 
+ -->
