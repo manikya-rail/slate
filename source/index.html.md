@@ -210,6 +210,618 @@ your_name | User name
 email     | User email
 current_password | Password for authentication
 
+
+# Dashboard
+
+## List all surveys in dashboard
+
+```ruby
+require 'uri'
+require 'net/http'
+
+url = URI("http://localhost:3000/en/api/v1/dashboard")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+request["cache-control"] = 'no-cache'
+
+response = http.request(request)
+puts response.read_body
+```
+
+```python
+import http.client
+
+conn = http.client.HTTPConnection("localhost:3000")
+
+headers = {
+    'cache-control': "no-cache"
+    }
+
+conn.request("GET", "/en/api/v1/dashboard", headers=headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
+```
+
+```shell
+curl --request GET \
+  --url http://localhost:3000/en/api/v1/dashboard \
+  --header 'cache-control: no-cache'
+```
+
+```javascript
+var data = null;
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("GET", "http://localhost:3000/en/api/v1/dashboard");
+xhr.setRequestHeader("cache-control", "no-cache");
+
+xhr.send(data);
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "dashboard_surveys_count": 127,
+    "surveys_count": 127,
+    "active": 0,
+    "draft": 33,
+    "finished": 94,
+    "surveys": [
+        {
+            "id": 347,
+            "title": "Atom",
+            "group": "new grops3",
+            "group_id": 3,
+            "group_image": "no-img-reports.png",
+            "status": "Created",
+            "created_at": "Mar 04, 2021"
+        },
+        {
+            "id": 346,
+            "title": "Atom",
+            "group": "testing new group",
+            "group_id": 18,
+            "group_image": "no-img-reports.png",
+            "status": "Created",
+            "created_at": "Mar 04, 2021"
+        },
+        {
+            "id": 345,
+            "title": "Atom",
+            "group": "testing new group",
+            "group_id": 18,
+            "group_image": "no-img-reports.png",
+            "status": "Created",
+            "created_at": "Mar 04, 2021"
+        },
+        {
+            "id": 344,
+            "title": "Atom",
+            "group": "testing new group",
+            "group_id": 18,
+            "group_image": "no-img-reports.png",
+            "status": "Created",
+            "created_at": "Mar 04, 2021"
+        },
+        {
+            "id": 343,
+            "title": "Atom",
+            "group": "testing new group",
+            "group_id": 18,
+            "group_image": "no-img-reports.png",
+            "status": "Created",
+            "created_at": "Mar 04, 2021"
+        },
+        {
+            "id": 342,
+            "title": "Atom",
+            "group": "testing new group",
+            "group_id": 18,
+            "group_image": "no-img-reports.png",
+            "status": "Created",
+            "created_at": "Mar 04, 2021"
+        },
+        {
+            "id": 341,
+            "title": "Atom",
+            "group": "new grops10",
+            "group_id": 10,
+            "group_image": "http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--999d136eedf75488dd260f4d031b674e9dbf88f7/output.png?locale=en",
+            "status": "Created",
+            "created_at": "Mar 03, 2021"
+        },
+        {
+            "id": 340,
+            "title": "Atom",
+            "group": "new grops10",
+            "group_id": 10,
+            "group_image": "http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--999d136eedf75488dd260f4d031b674e9dbf88f7/output.png?locale=en",
+            "status": "Created",
+            "created_at": "Mar 03, 2021"
+        },
+        {
+            "id": 339,
+            "title": "Atom",
+            "group": "new grops10",
+            "group_id": 10,
+            "group_image": "http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--999d136eedf75488dd260f4d031b674e9dbf88f7/output.png?locale=en",
+            "recipients": 2,
+            "respondents": 0,
+            "status": "Finished"
+        },
+        {
+            "id": 338,
+            "title": "Atom",
+            "group": "new grops10",
+            "group_id": 10,
+            "group_image": "http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--999d136eedf75488dd260f4d031b674e9dbf88f7/output.png?locale=en",
+            "status": "Created",
+            "created_at": "Mar 03, 2021"
+        }
+    ]
+}
+```
+
+This endpoint List all surveys in dashboard.
+
+<!-- <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside> -->
+
+### HTTP Request
+
+`GET http://localhost:3000/en/api/v1/dashboard?page=3`
+
+### URL Parameters
+
+Not needed.
+
+## List active surveys in dashboard
+
+```ruby
+require 'uri'
+require 'net/http'
+
+url = URI("http://localhost:3000/en/api/v1/dashboard/active")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+request["cache-control"] = 'no-cache'
+
+response = http.request(request)
+puts response.read_body
+```
+
+```python
+import http.client
+
+conn = http.client.HTTPConnection("localhost:3000")
+
+headers = {
+    'cache-control': "no-cache"
+    }
+
+conn.request("GET", "/en/api/v1/dashboard/active", headers=headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
+```
+
+```shell
+curl --request GET \
+  --url http://localhost:3000/en/api/v1/dashboard/active
+```
+
+```javascript
+var data = null;
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("GET", "http://localhost:3000/en/api/v1/dashboard/active");
+xhr.setRequestHeader("cache-control", "no-cache");
+
+xhr.send(data);
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "dashboard_surveys_count": 127,
+    "surveys_count": 127,
+    "active": 0,
+    "draft": 33,
+    "finished": 94,
+    "surveys": []
+}
+```
+
+This endpoint List active surveys in dashboard.
+
+### HTTP Request
+
+`GET http://localhost:3000/en/api/v1/dashboard/active`
+
+### URL Parameters
+
+Not needed.
+
+## List draft surveys in dashboard
+
+```ruby
+require 'uri'
+require 'net/http'
+
+url = URI("http://localhost:3000/en/api/v1/dashboard/draft")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+request["cache-control"] = 'no-cache'
+
+response = http.request(request)
+puts response.read_body
+```
+
+```python
+import http.client
+
+conn = http.client.HTTPConnection("localhost:3000")
+
+headers = {
+    'cache-control': "no-cache"
+    }
+
+conn.request("GET", "/en/api/v1/dashboard/draft", headers=headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
+```
+
+```shell
+curl --request GET \
+  --url http://localhost:3000/en/api/v1/dashboard/draft \
+  --header 'cache-control: no-cache'
+```
+
+```javascript
+var data = null;
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("GET", "http://localhost:3000/en/api/v1/dashboard/draft");
+xhr.setRequestHeader("cache-control", "no-cache");
+
+xhr.send(data);
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "dashboard_surveys_count": 127,
+    "surveys_count": 127,
+    "active": 0,
+    "draft": 33,
+    "finished": 94,
+    "surveys": [
+        {
+            "id": 347,
+            "title": "Atom",
+            "group": "new grops3",
+            "group_id": 3,
+            "group_image": "no-img-reports.png",
+            "status": "Created",
+            "created_at": "Mar 04, 2021"
+        },
+        {
+            "id": 346,
+            "title": "Atom",
+            "group": "testing new group",
+            "group_id": 18,
+            "group_image": "no-img-reports.png",
+            "status": "Created",
+            "created_at": "Mar 04, 2021"
+        },
+        {
+            "id": 345,
+            "title": "Atom",
+            "group": "testing new group",
+            "group_id": 18,
+            "group_image": "no-img-reports.png",
+            "status": "Created",
+            "created_at": "Mar 04, 2021"
+        },
+        {
+            "id": 344,
+            "title": "Atom",
+            "group": "testing new group",
+            "group_id": 18,
+            "group_image": "no-img-reports.png",
+            "status": "Created",
+            "created_at": "Mar 04, 2021"
+        },
+        {
+            "id": 343,
+            "title": "Atom",
+            "group": "testing new group",
+            "group_id": 18,
+            "group_image": "no-img-reports.png",
+            "status": "Created",
+            "created_at": "Mar 04, 2021"
+        },
+        {
+            "id": 342,
+            "title": "Atom",
+            "group": "testing new group",
+            "group_id": 18,
+            "group_image": "no-img-reports.png",
+            "status": "Created",
+            "created_at": "Mar 04, 2021"
+        },
+        {
+            "id": 341,
+            "title": "Atom",
+            "group": "new grops10",
+            "group_id": 10,
+            "group_image": "http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--999d136eedf75488dd260f4d031b674e9dbf88f7/output.png?locale=en",
+            "status": "Created",
+            "created_at": "Mar 03, 2021"
+        },
+        {
+            "id": 340,
+            "title": "Atom",
+            "group": "new grops10",
+            "group_id": 10,
+            "group_image": "http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--999d136eedf75488dd260f4d031b674e9dbf88f7/output.png?locale=en",
+            "status": "Created",
+            "created_at": "Mar 03, 2021"
+        },
+        {
+            "id": 338,
+            "title": "Atom",
+            "group": "new grops10",
+            "group_id": 10,
+            "group_image": "http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--999d136eedf75488dd260f4d031b674e9dbf88f7/output.png?locale=en",
+            "status": "Created",
+            "created_at": "Mar 03, 2021"
+        },
+        {
+            "id": 337,
+            "title": "BMW INTERIOR",
+            "group": "testing new group",
+            "group_id": 18,
+            "group_image": "no-img-reports.png",
+            "status": "Created",
+            "created_at": "Mar 02, 2021"
+        }
+    ]
+}
+```
+
+This endpoint List draft surveys in dashboard.
+
+### HTTP Request
+
+`GET http://localhost:3000/en/api/v1/dashboard/draft`
+
+### URL Parameters
+
+Not needed.
+
+## List finished surveys in dashboard
+
+```ruby
+require 'uri'
+require 'net/http'
+
+url = URI("http://localhost:3000/en/api/v1/dashboard/finished")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+request["cache-control"] = 'no-cache'
+
+response = http.request(request)
+puts response.read_body
+```
+
+```python
+import http.client
+
+conn = http.client.HTTPConnection("localhost:3000")
+
+headers = {
+    'cache-control': "no-cache"
+    }
+
+conn.request("GET", "/en/api/v1/dashboard/finished", headers=headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
+```
+
+```shell
+curl --request GET \
+  --url http://localhost:3000/en/api/v1/dashboard/finished \
+  --header 'cache-control: no-cache'
+```
+
+```javascript
+var data = null;
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("GET", "http://localhost:3000/en/api/v1/dashboard/finished");
+xhr.setRequestHeader("cache-control", "no-cache");
+
+xhr.send(data);
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "dashboard_surveys_count": 127,
+    "surveys_count": 127,
+    "active": 0,
+    "draft": 33,
+    "finished": 94,
+    "surveys": [
+        {
+            "id": 339,
+            "title": "Atom",
+            "group": "new grops10",
+            "group_id": 10,
+            "group_image": "http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--999d136eedf75488dd260f4d031b674e9dbf88f7/output.png?locale=en",
+            "recipients": 2,
+            "respondents": 0,
+            "status": "Finished"
+        },
+        {
+            "id": 332,
+            "title": "Atom",
+            "group": "asdsdas",
+            "group_id": 17,
+            "group_image": "no-img-reports.png",
+            "recipients": 1,
+            "respondents": 0,
+            "status": "Finished"
+        },
+        {
+            "id": 331,
+            "title": "BMW INTERIOR",
+            "group": "testing new group",
+            "group_id": 18,
+            "group_image": "no-img-reports.png",
+            "recipients": 0,
+            "respondents": 0,
+            "status": "Finished"
+        },
+        {
+            "id": 330,
+            "title": "Atom",
+            "group": "new grops",
+            "group_id": 13,
+            "group_image": "no-img-reports.png",
+            "recipients": 0,
+            "respondents": 0,
+            "status": "Finished"
+        },
+        {
+            "id": 329,
+            "title": "Survey with template 2 (2) (1)",
+            "group": "new gropss",
+            "group_id": 1,
+            "group_image": "no-img-reports.png",
+            "recipients": 1,
+            "respondents": 0,
+            "status": "Finished"
+        },
+        {
+            "id": 328,
+            "title": "Survey with template 2 (2)",
+            "group": "new gropss",
+            "group_id": 1,
+            "group_image": "no-img-reports.png",
+            "recipients": 1,
+            "respondents": 0,
+            "status": "Finished"
+        },
+        {
+            "id": 327,
+            "title": "other multiple check (2) (2)",
+            "group": "new grops",
+            "group_id": 13,
+            "group_image": "no-img-reports.png",
+            "recipients": 0,
+            "respondents": 0,
+            "status": "Finished"
+        },
+        {
+            "id": 325,
+            "title": "Survey with template 2 (1)",
+            "group": "new gropss",
+            "group_id": 1,
+            "group_image": "no-img-reports.png",
+            "recipients": 0,
+            "respondents": 0,
+            "status": "Finished"
+        },
+        {
+            "id": 323,
+            "title": "BMW INTERIOR (2) (1) (1)",
+            "group": "new gropsddd",
+            "group_id": 16,
+            "group_image": "no-img-reports.png",
+            "recipients": 1,
+            "respondents": 1,
+            "status": "Finished"
+        },
+        {
+            "id": 321,
+            "title": "BMW INTERIOR (2)",
+            "group": "new gropsddd",
+            "group_id": 16,
+            "group_image": "no-img-reports.png",
+            "recipients": 2,
+            "respondents": 2,
+            "status": "Finished"
+        }
+    ]
+}
+```
+
+This endpoint List finished surveys in dashboard.
+
+### HTTP Request
+
+`GET http://localhost:3000/en/api/v1/dashboard/finished`
+
+### URL Parameters
+
+Not needed.
+
 <!-- ## Delete a Specific Kitten
 
 ```ruby
