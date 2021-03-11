@@ -49,7 +49,7 @@ You must login to get <code>Bearer token</code> to access for API.
 require "uri"
 require "net/http"
 
-url = URI("localhost:3000/en/api/v1/accounts/login")
+url = URI("https://app.elasticpersonas.ai/en/api/v1/accounts/login")
 
 http = Net::HTTP.new(url.host, url.port);
 request = Net::HTTP::Post.new(url)
@@ -75,7 +75,7 @@ print(data.decode("utf-8"))
 ```
 
 ```shell
-curl --location --request POST 'localhost:3000/en/api/v1/accounts/login' \
+curl --location --request POST 'https://app.elasticpersonas.ai/en/api/v1/accounts/login' \
 --header 'Content-Type: application/json' \
 --data-raw '{"account": {"email": "ajith@techversantinfo.com", "password": "ajithking"}}'
 ```
@@ -93,7 +93,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("localhost:3000/en/api/v1/accounts/login", requestOptions)
+fetch("https://app.elasticpersonas.ai/en/api/v1/accounts/login", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
@@ -113,7 +113,7 @@ This endpoint login the client and generate jwt token for Api access.
 
 ### HTTP Request
 
-`POST http://localhost:3000/en/api/v1/accounts/login`
+`POST https://app.elasticpersonas.ai/en/api/v1/accounts/login`
 
 ### Query Parameters
 
@@ -133,7 +133,7 @@ Remember — You can get the JWT token from the response header!
 require "uri"
 require "net/http"
 
-url = URI("localhost:3000/en/api/v1/accounts")
+url = URI("https://app.elasticpersonas.ai/en/api/v1/accounts")
 
 http = Net::HTTP.new(url.host, url.port);
 request = Net::HTTP::Put.new(url)
@@ -160,7 +160,7 @@ print(data.decode("utf-8"))
 ```
 
 ```shell
-curl --location --request PUT 'localhost:3000/en/api/v1/accounts' \
+curl --location --request PUT 'https://app.elasticpersonas.ai/en/api/v1/accounts' \
 --header 'Content-Type: application/json' \
 --data-raw '{"account": {"your_name": "Ajithk", "email": "ajithbuddy.kumar@gmail.com", "current_password": "ajithking"}}'
 ```
@@ -178,7 +178,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("localhost:3000/en/api/v1/accounts", requestOptions)
+fetch("https://app.elasticpersonas.ai/en/api/v1/accounts", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
@@ -200,7 +200,7 @@ This endpoint Updates a account.
 
 ### HTTP Request
 
-`PUT http://localhost:3000/en/api/v1/accounts`
+`PUT https://app.elasticpersonas.ai/en/api/v1/accounts`
 
 ### URL Parameters
 
@@ -219,7 +219,7 @@ current_password | Password for authentication
 require 'uri'
 require 'net/http'
 
-url = URI("http://localhost:3000/en/api/v1/dashboard")
+url = URI("https://app.elasticpersonas.ai/en/api/v1/dashboard")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -233,7 +233,7 @@ puts response.read_body
 ```python
 import http.client
 
-conn = http.client.HTTPConnection("localhost:3000")
+conn = http.client.HTTPConnection("https://app.elasticpersonas.ai")
 
 headers = {
     'cache-control': "no-cache"
@@ -249,7 +249,7 @@ print(data.decode("utf-8"))
 
 ```shell
 curl --request GET \
-  --url http://localhost:3000/en/api/v1/dashboard \
+  --url https://app.elasticpersonas.ai/en/api/v1/dashboard \
   --header 'cache-control: no-cache'
 ```
 
@@ -265,7 +265,7 @@ xhr.addEventListener("readystatechange", function () {
   }
 });
 
-xhr.open("GET", "http://localhost:3000/en/api/v1/dashboard");
+xhr.open("GET", "https://app.elasticpersonas.ai/en/api/v1/dashboard");
 xhr.setRequestHeader("cache-control", "no-cache");
 
 xhr.send(data);
@@ -340,7 +340,7 @@ xhr.send(data);
             "title": "Atom",
             "group": "new grops10",
             "group_id": 10,
-            "group_image": "http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--999d136eedf75488dd260f4d031b674e9dbf88f7/output.png?locale=en",
+            "group_image": "https://app.elasticpersonas.ai/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--999d136eedf75488dd260f4d031b674e9dbf88f7/output.png?locale=en",
             "status": "Created",
             "created_at": "Mar 03, 2021"
         },
@@ -349,7 +349,7 @@ xhr.send(data);
             "title": "Atom",
             "group": "new grops10",
             "group_id": 10,
-            "group_image": "http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--999d136eedf75488dd260f4d031b674e9dbf88f7/output.png?locale=en",
+            "group_image": "https://app.elasticpersonas.ai/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--999d136eedf75488dd260f4d031b674e9dbf88f7/output.png?locale=en",
             "status": "Created",
             "created_at": "Mar 03, 2021"
         },
@@ -358,7 +358,7 @@ xhr.send(data);
             "title": "Atom",
             "group": "new grops10",
             "group_id": 10,
-            "group_image": "http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--999d136eedf75488dd260f4d031b674e9dbf88f7/output.png?locale=en",
+            "group_image": "https://app.elasticpersonas.ai/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--999d136eedf75488dd260f4d031b674e9dbf88f7/output.png?locale=en",
             "recipients": 2,
             "respondents": 0,
             "status": "Finished"
@@ -368,7 +368,7 @@ xhr.send(data);
             "title": "Atom",
             "group": "new grops10",
             "group_id": 10,
-            "group_image": "http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--999d136eedf75488dd260f4d031b674e9dbf88f7/output.png?locale=en",
+            "group_image": "https://app.elasticpersonas.ai/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--999d136eedf75488dd260f4d031b674e9dbf88f7/output.png?locale=en",
             "status": "Created",
             "created_at": "Mar 03, 2021"
         }
@@ -382,7 +382,7 @@ This endpoint List all surveys in dashboard.
 
 ### HTTP Request
 
-`GET http://localhost:3000/en/api/v1/dashboard?page=3`
+`GET https://app.elasticpersonas.ai/en/api/v1/dashboard?page=3`
 
 ### URL Parameters
 
@@ -394,7 +394,7 @@ Not needed.
 require 'uri'
 require 'net/http'
 
-url = URI("http://localhost:3000/en/api/v1/dashboard/active")
+url = URI("https://app.elasticpersonas.ai/en/api/v1/dashboard/active")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -408,7 +408,7 @@ puts response.read_body
 ```python
 import http.client
 
-conn = http.client.HTTPConnection("localhost:3000")
+conn = http.client.HTTPConnection("https://app.elasticpersonas.ai")
 
 headers = {
     'cache-control': "no-cache"
@@ -424,7 +424,7 @@ print(data.decode("utf-8"))
 
 ```shell
 curl --request GET \
-  --url http://localhost:3000/en/api/v1/dashboard/active
+  --url https://app.elasticpersonas.ai/en/api/v1/dashboard/active
 ```
 
 ```javascript
@@ -439,7 +439,7 @@ xhr.addEventListener("readystatechange", function () {
   }
 });
 
-xhr.open("GET", "http://localhost:3000/en/api/v1/dashboard/active");
+xhr.open("GET", "https://app.elasticpersonas.ai/en/api/v1/dashboard/active");
 xhr.setRequestHeader("cache-control", "no-cache");
 
 xhr.send(data);
@@ -462,7 +462,7 @@ This endpoint List active surveys in dashboard.
 
 ### HTTP Request
 
-`GET http://localhost:3000/en/api/v1/dashboard/active`
+`GET https://app.elasticpersonas.ai/en/api/v1/dashboard/active`
 
 ### URL Parameters
 
@@ -474,7 +474,7 @@ Not needed.
 require 'uri'
 require 'net/http'
 
-url = URI("http://localhost:3000/en/api/v1/dashboard/draft")
+url = URI("https://app.elasticpersonas.ai/en/api/v1/dashboard/draft")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -488,7 +488,7 @@ puts response.read_body
 ```python
 import http.client
 
-conn = http.client.HTTPConnection("localhost:3000")
+conn = http.client.HTTPConnection("https://app.elasticpersonas.ai")
 
 headers = {
     'cache-control': "no-cache"
@@ -504,7 +504,7 @@ print(data.decode("utf-8"))
 
 ```shell
 curl --request GET \
-  --url http://localhost:3000/en/api/v1/dashboard/draft \
+  --url https://app.elasticpersonas.ai/en/api/v1/dashboard/draft \
   --header 'cache-control: no-cache'
 ```
 
@@ -520,7 +520,7 @@ xhr.addEventListener("readystatechange", function () {
   }
 });
 
-xhr.open("GET", "http://localhost:3000/en/api/v1/dashboard/draft");
+xhr.open("GET", "https://app.elasticpersonas.ai/en/api/v1/dashboard/draft");
 xhr.setRequestHeader("cache-control", "no-cache");
 
 xhr.send(data);
@@ -595,7 +595,7 @@ xhr.send(data);
             "title": "Atom",
             "group": "new grops10",
             "group_id": 10,
-            "group_image": "http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--999d136eedf75488dd260f4d031b674e9dbf88f7/output.png?locale=en",
+            "group_image": "https://app.elasticpersonas.ai/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--999d136eedf75488dd260f4d031b674e9dbf88f7/output.png?locale=en",
             "status": "Created",
             "created_at": "Mar 03, 2021"
         },
@@ -604,7 +604,7 @@ xhr.send(data);
             "title": "Atom",
             "group": "new grops10",
             "group_id": 10,
-            "group_image": "http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--999d136eedf75488dd260f4d031b674e9dbf88f7/output.png?locale=en",
+            "group_image": "https://app.elasticpersonas.ai/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--999d136eedf75488dd260f4d031b674e9dbf88f7/output.png?locale=en",
             "status": "Created",
             "created_at": "Mar 03, 2021"
         },
@@ -613,7 +613,7 @@ xhr.send(data);
             "title": "Atom",
             "group": "new grops10",
             "group_id": 10,
-            "group_image": "http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--999d136eedf75488dd260f4d031b674e9dbf88f7/output.png?locale=en",
+            "group_image": "https://app.elasticpersonas.ai/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--999d136eedf75488dd260f4d031b674e9dbf88f7/output.png?locale=en",
             "status": "Created",
             "created_at": "Mar 03, 2021"
         },
@@ -634,7 +634,7 @@ This endpoint List draft surveys in dashboard.
 
 ### HTTP Request
 
-`GET http://localhost:3000/en/api/v1/dashboard/draft`
+`GET https://app.elasticpersonas.ai/en/api/v1/dashboard/draft`
 
 ### URL Parameters
 
@@ -646,7 +646,7 @@ Not needed.
 require 'uri'
 require 'net/http'
 
-url = URI("http://localhost:3000/en/api/v1/dashboard/finished")
+url = URI("https://app.elasticpersonas.ai/en/api/v1/dashboard/finished")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -660,7 +660,7 @@ puts response.read_body
 ```python
 import http.client
 
-conn = http.client.HTTPConnection("localhost:3000")
+conn = http.client.HTTPConnection("https://app.elasticpersonas.ai")
 
 headers = {
     'cache-control': "no-cache"
@@ -676,7 +676,7 @@ print(data.decode("utf-8"))
 
 ```shell
 curl --request GET \
-  --url http://localhost:3000/en/api/v1/dashboard/finished \
+  --url https://app.elasticpersonas.ai/en/api/v1/dashboard/finished \
   --header 'cache-control: no-cache'
 ```
 
@@ -692,7 +692,7 @@ xhr.addEventListener("readystatechange", function () {
   }
 });
 
-xhr.open("GET", "http://localhost:3000/en/api/v1/dashboard/finished");
+xhr.open("GET", "https://app.elasticpersonas.ai/en/api/v1/dashboard/finished");
 xhr.setRequestHeader("cache-control", "no-cache");
 
 xhr.send(data);
@@ -713,7 +713,7 @@ xhr.send(data);
             "title": "Atom",
             "group": "new grops10",
             "group_id": 10,
-            "group_image": "http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--999d136eedf75488dd260f4d031b674e9dbf88f7/output.png?locale=en",
+            "group_image": "https://app.elasticpersonas.ai/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--999d136eedf75488dd260f4d031b674e9dbf88f7/output.png?locale=en",
             "recipients": 2,
             "respondents": 0,
             "status": "Finished"
@@ -816,7 +816,7 @@ This endpoint List finished surveys in dashboard.
 
 ### HTTP Request
 
-`GET http://localhost:3000/en/api/v1/dashboard/finished`
+`GET https://app.elasticpersonas.ai/en/api/v1/dashboard/finished`
 
 ### URL Parameters
 
