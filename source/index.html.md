@@ -382,7 +382,7 @@ This endpoint List all surveys in dashboard.
 
 ### HTTP Request
 
-`GET https://app.elasticpersonas.ai/en/api/v1/dashboard?page=3`
+`GET https://app.elasticpersonas.ai/en/api/v1/dashboard`
 
 ### URL Parameters
 
@@ -895,6 +895,8 @@ This endpoint Generate PDF of Respondents.
 
 Parameter | Description
 --------- | -----------
+id | The ID of the survey
+report_id | The ID of the report
 submission_ids | The submission ids of the survey
 
 ## Generate PDF of General
@@ -967,7 +969,10 @@ This endpoint Generate PDF of General.
 
 ### URL Parameters
 
-Not needed.
+Parameter | Description
+--------- | -----------
+id | The ID of the survey
+report_id | The ID of the report
 
 ## Shows Template in Create Survey
 
@@ -3320,7 +3325,7 @@ This endpoint Shows Themes in Create Survey.
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the account
+ID | The ID of the industry
 type | Type of the theme
 
 ## Duplicate a Question in a Block
@@ -3399,6 +3404,7 @@ This endpoint Duplicate a Question in a Block.
 
 Parameter | Description
 --------- | -----------
+survey_id | The ID of the survey
 question_id | The ID of the question
 
 # Reports
@@ -3731,7 +3737,9 @@ This endpoint List all surveys in Reports.
 
 ### URL Parameters
 
-Not needed.
+Parameter | Description
+--------- | -----------
+report_id | The ID of the report
 
 ## List active surveys in Reports
 
@@ -3811,7 +3819,9 @@ This endpoint List active surveys in Reports.
 
 ### URL Parameters
 
-Not needed.
+Parameter | Description
+--------- | -----------
+report_id | The ID of the report
 
 ## List finished surveys in Reports
 
@@ -3982,7 +3992,9 @@ This endpoint List finished surveys in Reports.
 
 ### URL Parameters
 
-Not needed.
+Parameter | Description
+--------- | -----------
+report_id | The ID of the report
 
 # Groups
 
@@ -4343,7 +4355,9 @@ This endpoint List all surveys in Group.
 
 ### URL Parameters
 
-Not needed.
+Parameter | Description
+--------- | -----------
+group_id | The ID of the group
 
 ## List active surveys in Group
 
@@ -4423,7 +4437,9 @@ This endpoint List active surveys in Group.
 
 ### URL Parameters
 
-Not needed.
+Parameter | Description
+--------- | -----------
+group_id | The ID of the group
 
 ## List finished surveys in Group
 
@@ -4614,7 +4630,9 @@ This endpoint List finished surveys in Group.
 
 ### URL Parameters
 
-Not needed.
+Parameter | Description
+--------- | -----------
+group_id | The ID of the group
 
 ## List draft surveys in Group
 
@@ -4767,7 +4785,9 @@ This endpoint List draft surveys in Group.
 
 ### URL Parameters
 
-Not needed.
+Parameter | Description
+--------- | -----------
+group_id | The ID of the group
 
 <!-- ## Delete a Specific Kitten
 
