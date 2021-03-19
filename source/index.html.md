@@ -54,7 +54,7 @@ url = URI("https://app.elasticpersonas.ai/en/api/v1/accounts/login")
 http = Net::HTTP.new(url.host, url.port);
 request = Net::HTTP::Post.new(url)
 request["Content-Type"] = "application/json"
-request.body = "{\"account\": {\"email\": \"ajith@techversantinfo.com\", \"password\": \"ajithking\"}}"
+request.body = "{\"account\": {\"email\": \"test@gmail.com\", \"password\": \"test123\"}}"
 
 response = http.request(request)
 puts response.read_body
@@ -64,7 +64,7 @@ puts response.read_body
 import http.client
 
 conn = http.client.HTTPSConnection("localhost", undefined)
-payload = "{\"account\": {\"email\": \"ajith@techversantinfo.com\", \"password\": \"ajithking\"}}"
+payload = "{\"account\": {\"email\": \"test@gmail.com\", \"password\": \"test123\"}}"
 headers = {
   'Content-Type': 'application/json',
 }
@@ -77,14 +77,14 @@ print(data.decode("utf-8"))
 ```shell
 curl --location --request POST 'https://app.elasticpersonas.ai/en/api/v1/accounts/login' \
 --header 'Content-Type: application/json' \
---data-raw '{"account": {"email": "ajith@techversantinfo.com", "password": "ajithking"}}'
+--data-raw '{"account": {"email": "test@gmail.com", "password": "test123"}}'
 ```
 
 ```javascript
 var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
-var raw = JSON.stringify({"account":{"email":"ajith@techversantinfo.com","password":"ajithking"}});
+var raw = JSON.stringify({"account":{"email":"test@gmail.com","password":"test123"}});
 
 var requestOptions = {
   method: 'POST',
@@ -138,7 +138,7 @@ url = URI("https://app.elasticpersonas.ai/en/api/v1/accounts")
 http = Net::HTTP.new(url.host, url.port);
 request = Net::HTTP::Put.new(url)
 request["Content-Type"] = "application/json"
-request.body = "{\"account\": {\"your_name\": \"Ajithk\", \"email\": \"ajithbuddy.kumar@gmail.com\", \"current_password\": \"ajithking\"}}"
+request.body = "{\"account\": {\"your_name\": \"test\", \"email\": \"test@gmail.com\", \"current_password\": \"test123\"}}"
 
 response = http.request(request)
 puts response.read_body
@@ -149,7 +149,7 @@ puts response.read_body
 import http.client
 
 conn = http.client.HTTPSConnection("localhost", undefined)
-payload = "{\"account\": {\"your_name\": \"Ajithk\", \"email\": \"ajithbuddy.kumar@gmail.com\", \"current_password\": \"ajithking\"}}"
+payload = "{\"account\": {\"your_name\": \"test\", \"email\": \"test@gmail.com\", \"current_password\": \"test123\"}}"
 headers = {
   'Content-Type': 'application/json',
 }
@@ -162,14 +162,14 @@ print(data.decode("utf-8"))
 ```shell
 curl --location --request PUT 'https://app.elasticpersonas.ai/en/api/v1/accounts' \
 --header 'Content-Type: application/json' \
---data-raw '{"account": {"your_name": "Ajithk", "email": "ajithbuddy.kumar@gmail.com", "current_password": "ajithking"}}'
+--data-raw '{"account": {"your_name": "test", "email": "test@gmail.com", "current_password": "test123"}}'
 ```
 
 ```javascript
 var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
-var raw = JSON.stringify({"account":{"your_name":"Ajithk","email":"ajithbuddy.kumar@gmail.com","current_password":"ajithking"}});
+var raw = JSON.stringify({"account":{"your_name":"test","email":"test@gmail.com","current_password":"test123"}});
 
 var requestOptions = {
   method: 'PUT',
@@ -3475,7 +3475,7 @@ xhr.send(data);
         {
             "id": 18,
             "title": "testing new group",
-            "creator_name": "Ajith",
+            "creator_name": "test",
             "created_at": "Nov 19, 2020",
             "created_by_id": 3,
             "archived": false,
@@ -3485,7 +3485,7 @@ xhr.send(data);
         {
             "id": 17,
             "title": "asdsdas",
-            "creator_name": "Ajith",
+            "creator_name": "test",
             "created_at": "Oct 21, 2020",
             "created_by_id": 3,
             "archived": false,
@@ -3495,7 +3495,7 @@ xhr.send(data);
         {
             "id": 16,
             "title": "new gropsddd",
-            "creator_name": "Ajith",
+            "creator_name": "test",
             "created_at": "Oct 14, 2020",
             "created_by_id": 3,
             "archived": false,
@@ -3505,7 +3505,7 @@ xhr.send(data);
         {
             "id": 13,
             "title": "new grops",
-            "creator_name": "Ajith",
+            "creator_name": "test",
             "created_at": "Aug 26, 2020",
             "created_by_id": 3,
             "archived": false,
@@ -3515,7 +3515,7 @@ xhr.send(data);
         {
             "id": 10,
             "title": "new grops10",
-            "creator_name": "Ajith",
+            "creator_name": "test",
             "created_at": "Jul 27, 2020",
             "created_by_id": 3,
             "archived": false,
@@ -3526,7 +3526,7 @@ xhr.send(data);
         {
             "id": 9,
             "title": "new grops9",
-            "creator_name": "Ajith",
+            "creator_name": "test",
             "created_at": "Jul 27, 2020",
             "created_by_id": 3,
             "archived": false,
@@ -3537,7 +3537,7 @@ xhr.send(data);
         {
             "id": 2,
             "title": "new grops22",
-            "creator_name": "Ajith",
+            "creator_name": "test",
             "created_at": "Jul 23, 2020",
             "created_by_id": 3,
             "archived": false,
@@ -3547,7 +3547,7 @@ xhr.send(data);
         {
             "id": 1,
             "title": "new gropss",
-            "creator_name": "Ajith",
+            "creator_name": "test",
             "created_at": "Mar 30, 2020",
             "created_by_id": 3,
             "archived": false,
@@ -4244,7 +4244,7 @@ xhr.send(data);
             "respondents": 0,
             "status": "Finished",
             "created_at": "Dec 14, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         },
         {
             "id": 328,
@@ -4255,7 +4255,7 @@ xhr.send(data);
             "respondents": 0,
             "status": "Finished",
             "created_at": "Dec 14, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         },
         {
             "id": 325,
@@ -4266,7 +4266,7 @@ xhr.send(data);
             "respondents": 0,
             "status": "Finished",
             "created_at": "Dec 07, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         },
         {
             "id": 311,
@@ -4277,7 +4277,7 @@ xhr.send(data);
             "respondents": 5,
             "status": "Finished",
             "created_at": "Oct 13, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         },
         {
             "id": 310,
@@ -4288,7 +4288,7 @@ xhr.send(data);
             "respondents": 2,
             "status": "Finished",
             "created_at": "Oct 13, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         },
         {
             "id": 292,
@@ -4299,7 +4299,7 @@ xhr.send(data);
             "respondents": 1,
             "status": "Finished",
             "created_at": "Oct 04, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         },
         {
             "id": 285,
@@ -4308,7 +4308,7 @@ xhr.send(data);
             "group_image": "no-img-reports.png",
             "status": "Created",
             "created_at": "Sep 29, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         },
         {
             "id": 283,
@@ -4319,7 +4319,7 @@ xhr.send(data);
             "respondents": 0,
             "status": "Finished",
             "created_at": "Sep 16, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         },
         {
             "id": 274,
@@ -4330,7 +4330,7 @@ xhr.send(data);
             "respondents": 0,
             "status": "Finished",
             "created_at": "Aug 25, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         },
         {
             "id": 273,
@@ -4341,7 +4341,7 @@ xhr.send(data);
             "respondents": 1,
             "status": "Finished",
             "created_at": "Aug 25, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         }
     ]
 }
@@ -4517,7 +4517,7 @@ xhr.send(data);
             "respondents": 0,
             "status": "Finished",
             "created_at": "Dec 14, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         },
         {
             "id": 328,
@@ -4528,7 +4528,7 @@ xhr.send(data);
             "respondents": 0,
             "status": "Finished",
             "created_at": "Dec 14, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         },
         {
             "id": 325,
@@ -4539,7 +4539,7 @@ xhr.send(data);
             "respondents": 0,
             "status": "Finished",
             "created_at": "Dec 07, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         },
         {
             "id": 311,
@@ -4550,7 +4550,7 @@ xhr.send(data);
             "respondents": 5,
             "status": "Finished",
             "created_at": "Oct 13, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         },
         {
             "id": 310,
@@ -4561,7 +4561,7 @@ xhr.send(data);
             "respondents": 2,
             "status": "Finished",
             "created_at": "Oct 13, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         },
         {
             "id": 292,
@@ -4572,7 +4572,7 @@ xhr.send(data);
             "respondents": 1,
             "status": "Finished",
             "created_at": "Oct 04, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         },
         {
             "id": 283,
@@ -4583,7 +4583,7 @@ xhr.send(data);
             "respondents": 0,
             "status": "Finished",
             "created_at": "Sep 16, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         },
         {
             "id": 274,
@@ -4594,7 +4594,7 @@ xhr.send(data);
             "respondents": 0,
             "status": "Finished",
             "created_at": "Aug 25, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         },
         {
             "id": 273,
@@ -4605,7 +4605,7 @@ xhr.send(data);
             "respondents": 1,
             "status": "Finished",
             "created_at": "Aug 25, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         },
         {
             "id": 272,
@@ -4616,7 +4616,7 @@ xhr.send(data);
             "respondents": 3,
             "status": "Finished",
             "created_at": "Aug 24, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         }
     ]
 }
@@ -4708,7 +4708,7 @@ xhr.send(data);
             "group_image": "no-img-reports.png",
             "status": "Draft",
             "created_at": "Sep 29, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         },
         {
             "id": 270,
@@ -4717,7 +4717,7 @@ xhr.send(data);
             "group_image": "no-img-reports.png",
             "status": "Draft",
             "created_at": "Aug 24, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         },
         {
             "id": 248,
@@ -4726,7 +4726,7 @@ xhr.send(data);
             "group_image": "no-img-reports.png",
             "status": "Draft",
             "created_at": "Jul 28, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         },
         {
             "id": 227,
@@ -4735,7 +4735,7 @@ xhr.send(data);
             "group_image": "no-img-reports.png",
             "status": "Draft",
             "created_at": "Jul 26, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         },
         {
             "id": 224,
@@ -4744,7 +4744,7 @@ xhr.send(data);
             "group_image": "no-img-reports.png",
             "status": "Draft",
             "created_at": "Jul 26, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         },
         {
             "id": 164,
@@ -4753,7 +4753,7 @@ xhr.send(data);
             "group_image": "no-img-reports.png",
             "status": "Draft",
             "created_at": "Jul 23, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         },
         {
             "id": 57,
@@ -4762,7 +4762,7 @@ xhr.send(data);
             "group_image": "no-img-reports.png",
             "status": "Draft",
             "created_at": "Jul 19, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         },
         {
             "id": 8,
@@ -4771,7 +4771,7 @@ xhr.send(data);
             "group_image": "no-img-reports.png",
             "status": "Draft",
             "created_at": "Apr 01, 2020",
-            "created_by": "Ajith"
+            "created_by": "test"
         }
     ]
 }
